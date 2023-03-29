@@ -1,21 +1,27 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 #logo {
-    background-image: url("../images/Group\ 27.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: block;
-  }
-  
-header,main,footer,nav,aside,section,div {
-    display: block;
+  background-image: url("../images/Group\ 27.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
 }
-  
+
+header,
+main,
+footer,
+nav,
+aside,
+section,
+div {
+  display: block;
+}
+
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #logo span {
@@ -31,7 +37,7 @@ a {
   color: #222222;
   letter-spacing: 0.25em;
   margin-left: 38px;
-  }
+}
 
 .blue-block {
   background-color: #187bcd;
@@ -41,12 +47,14 @@ a {
   /* width: 1200px; */
   height: 555px;
 }
+
 .img-memoji {
   margin-top: 82px;
   margin-left: 38px;
 }
+
 .img-yellow {
-/* Rectangle 5 */
+  /* Rectangle 5 */
   position: absolute;
   width: 278px;
   height: 388px;
@@ -56,22 +64,23 @@ a {
 }
 
 .blue-block img {
-  margin-left:78px;
+  margin-left: 78px;
 }
 
 .text1-in-blue {
   position: absolute;
-width: 448px;
-height: 98px;
-left: 506px;
-top: 206px;
+  width: 448px;
+  height: 98px;
+  left: 506px;
+  top: 206px;
 
-font-family: 'Nunito';
-font-style: normal;
+  font-family: 'Nunito';
+  font-style: normal;
 
-font-size: 36px;
-line-height: 49px;
+  font-size: 36px;
+  line-height: 49px;
 }
+
 .text2-in-blue {
   position: absolute;
   width: 448px;
@@ -88,22 +97,23 @@ line-height: 49px;
 
 h2 {
   font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 50px;
-    letter-spacing: -1px;
-    color: #222222;
-  }
-
-  #wrapper {
-    margin-left: 40px;
-  }
-
-  .about-me {
-    margin-top: 24px;
-  color:#222222;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: -1px;
+  color: #222222;
 }
+
+#wrapper {
+  margin-left: 40px;
+}
+
+.about-me {
+  margin-top: 24px;
+  color: #222222;
+}
+
 .below-about {
   margin-top: 24px;
   font-style: normal;
@@ -115,13 +125,13 @@ h2 {
 
 .exercises {
   margin-top: 83px;
-  color:#222222;
+  color: #222222;
 }
 
 .exercises-block {
   margin-top: 24px;
   display: flex;
-} 
+}
 
 .ex1 {
   width: 200px;
@@ -132,17 +142,18 @@ h2 {
 }
 
 .ex2 {
- 
+
   width: 200px;
   height: 264px;
   background: #EBF1FF;
   border-radius: 20px;
   margin-top: 24px;
   margin-left: 24px;
-  
+
 }
+
 .ex3 {
- 
+
   width: 200px;
   height: 264px;
   background: #EBFFEC;
@@ -150,16 +161,18 @@ h2 {
   margin-left: 24px;
   margin-top: 24px;
 }
+
 .ex4 {
-  
+
   width: 200px;
   height: 264px;
   background: #FFEBFC;
   border-radius: 20px;
   margin-left: 24px;
   margin-top: 24px;
-  
+
 }
+
 .ex5 {
   width: 200px;
   height: 264px;
@@ -168,6 +181,7 @@ h2 {
   margin-left: 24px;
   margin-top: 24px;
 }
+
 .ex-pic {
   position: relative;
   padding-top: 25px;
@@ -176,23 +190,25 @@ h2 {
 
 .ex-name {
   position: relative;
-  margin : 25px 99px 0px 24px;
+  margin: 25px 99px 0px 24px;
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 800;
   font-size: 16px;
   line-height: 24px;
 }
+
 .ex-view {
   /* position: relative; */
   position: relative;
-  padding : 32px 56px 0px 24px;
+  padding: 32px 56px 0px 24px;
 }
 
 .Programming-Languages {
   margin-top: 40px;
-  color:#222222;
+  color: #222222;
 }
+
 .Programming-Languages-ul {
   font-family: 'Rubik';
   font-style: normal;
@@ -203,26 +219,27 @@ h2 {
   margin-left: 40px;
   margin-bottom: 40px;
 }
+
 body {
   background-color: #f2f2f2;
-  }
+}
 
 header {
-    width: 100%;
-    margin-top: 40px;
-  }
+  width: 100%;
+  margin-top: 40px;
+}
 
-  section ul {
-    margin-left: 40px;
-  }
+section ul {
+  margin-left: 40px;
+}
 
 /* Footer */
 footer {
-
-  background-image: url("../images/footer-backround.png");
   margin-top: 271px;
   padding: 0%;
   height: 301px;
+  width: 100%;
+  background-color: #efefef;
 }
 
 footer section {
@@ -236,10 +253,11 @@ footer h3 {
   font-weight: 600;
   font-size: 18px;
   line-height: 25px;
-  nav-down: 32px ;
+  nav-down: 32px;
   padding-top: 32px;
   margin-left: 40px;
 }
+
 footer p {
   font-family: 'Nunito';
   font-style: normal;
@@ -247,8 +265,9 @@ footer p {
   font-size: 14px;
   line-height: 19px;
   margin-left: 40px;
-  margin-top: 16px;;
-  color : #8D8D8D;
+  margin-top: 16px;
+  ;
+  color: #8D8D8D;
 }
 
 .footer-Copyright {
@@ -261,5 +280,3 @@ footer p {
   line-height: 16px;
   color: #8D8D8D;
 }
-
-
