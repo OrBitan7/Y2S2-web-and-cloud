@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  /* overflow-x: hidden; */
 }
 
 #logo {
@@ -8,6 +9,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
+
 }
 
 header,
@@ -18,6 +20,7 @@ aside,
 section,
 div {
   display: block;
+
 }
 
 a {
@@ -25,7 +28,7 @@ a {
 }
 
 #logo span {
-  font-family: 'Nunito';
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -42,10 +45,11 @@ a {
 .blue-block {
   background-color: #187bcd;
   margin-left: -40px;
-  margin-right: -40px;
+  margin-right: 0px;
   margin-top: 50px;
   /* width: 1200px; */
   height: 555px;
+
 }
 
 .img-memoji {
@@ -74,7 +78,7 @@ a {
   left: 506px;
   top: 206px;
 
-  font-family: 'Nunito';
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
 
   font-size: 36px;
@@ -88,7 +92,7 @@ a {
   left: 506px;
   top: 320px;
 
-  font-family: 'Nunito';
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -96,7 +100,7 @@ a {
 }
 
 h2 {
-  font-family: 'Rubik';
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
@@ -107,6 +111,7 @@ h2 {
 
 #wrapper {
   margin-left: 40px;
+
 }
 
 .about-me {
@@ -117,7 +122,7 @@ h2 {
 .below-about {
   margin-top: 24px;
   font-style: normal;
-  font-family: 'Rubik';
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 140.62%;
@@ -190,8 +195,8 @@ h2 {
 
 .ex-name {
   position: relative;
-  margin: 25px 99px 0px 24px;
-  font-family: 'Rubik';
+  margin: 25px 0px 0px 24px;
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 16px;
@@ -199,9 +204,50 @@ h2 {
 }
 
 .ex-view {
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 40px;
+  margin-top: 32px;
+  margin-left: 24px;
+  height: 40px;
+  width: 120px;
+  align-items: center;
+  display: flex;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  justify-content: center;
   /* position: relative; */
-  position: relative;
-  padding: 32px 56px 0px 24px;
+  /* position: relative;*/
+  /* padding: 32px 56px 0px 24px;  */
+}
+
+.ex1 a section:hover {
+  background-color: #171F46;
+  color: #FDEDE5;
+}
+
+.ex2 a section:hover {
+  background-color: #171F46;
+  color: #EBF1FF;
+}
+
+.ex3 a section:hover {
+  background-color: #171F46;
+  color: #EBFFEC;
+}
+
+.ex4 a section:hover {
+  background-color: #171F46;
+  color: #FFEBFC;
+}
+
+.ex5 a section:hover {
+  background-color: #171F46;
+  color: #FFFEEB;
 }
 
 .Programming-Languages {
@@ -210,7 +256,7 @@ h2 {
 }
 
 .Programming-Languages-ul {
-  font-family: 'Rubik';
+  font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -235,11 +281,12 @@ section ul {
 
 /* Footer */
 footer {
+
   margin-top: 271px;
   padding: 0%;
   height: 301px;
   width: 100%;
-  background-color: #efefef;
+  background-color: #dcdbdbc7;
 }
 
 footer section {
@@ -248,7 +295,7 @@ footer section {
 
 footer h3 {
   position: relative;
-  font-family: 'Nunito';
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -259,7 +306,7 @@ footer h3 {
 }
 
 footer p {
-  font-family: 'Nunito';
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -273,7 +320,7 @@ footer p {
 .footer-Copyright {
   margin-top: 70px;
   margin-left: 40px;
-  font-family: 'Nunito';
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
