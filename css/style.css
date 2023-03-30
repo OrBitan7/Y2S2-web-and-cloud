@@ -42,7 +42,7 @@ a {
 }
 
 .blue-block {
-  background-color: #187bcd;
+  background-color: #F9BDBD;
   margin-left: -40px;
   margin-right: 0px;
   margin-top: 50px;
@@ -200,7 +200,7 @@ h2 {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  
+
 }
 
 .ex-view {
@@ -269,6 +269,24 @@ h2 {
 
 body {
   background-color: #FFFFFF;
+}
+
+.your-choice-bg {
+  background: #F9BDBD;
+  width: 100%;
+  display: block;
+  height: 508px;
+  top: 1120px;
+  left: 0px;
+
+}
+
+.your-choice-bg img {
+  align-items: center;
+  justify-content: center;
+  margin-left: 450px;
+  margin-top: 30px;
+  text-align: center;
 }
 
 header {
