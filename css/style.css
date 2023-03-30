@@ -273,13 +273,15 @@ body {
 
 .your-choice-bg {
   background: #F9BDBD;
-  width: 100%;
+  width: auto;
+  margin-right: 40px;
   display: block;
   height: 508px;
   top: 1120px;
   left: 0px;
 
 }
+
 
 .your-choice-bg img {
   align-items: center;
