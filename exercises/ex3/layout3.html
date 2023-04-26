@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="js" href="js/layout3.js">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
     <title>Or Bitan-ex3-layout3</title>
+    <!-- <script type="text/javascript" src="js/layout3.js"></script> -->
 </head>
 
 <body>
-    <header>
-        <section class="black-rec"></section>
+    <header id="header">
     </header>
     <main>
         <div id="wrraper-layout3">
@@ -22,7 +23,7 @@
                 </ul>
             </div>
             <div id="white-section-layout3">
-                
+
             </div>
             <div id="blue-section-layout3">
 
@@ -34,6 +35,44 @@
     </main>
     <footer>
     </footer>
+    <script>
+        document.getElementById("header").innerHTML = '<section id="black-rec-generator"></section>';
+        var size = 80;
+        let blackRecGenerator = document.getElementById("black-rec-generator");
+        blackRecGenerator.style.position = 'absolute';
+        blackRecGenerator.style.marginTop = '21px';
+        blackRecGenerator.style.height = '80px';
+        blackRecGenerator.style.width = '80px';
+        blackRecGenerator.style.marginRight = '24px';
+        blackRecGenerator.style.background = 'black';
+        blackRecGenerator.style.right = '0px';
+        blackRecGenerator.style.cursor='grab';
+        let mrgLeft = "64px";
+        let mrgTop = "123px";
+        let boxCount = 0;
+        let classsName = "blackBoxs"
+        const parent=document.querySelector("#white-section-layout3");
+        blackRecGenerator.onclick = function () {
+            // let temp = new blackBox("     ");
+            temp=make();
+            make();
+            make();
+            // alert(temp.style.width + "  " + boxCount + "  " );
+        };
+        function make() {
+            const ele=document.createElement('section');
+            // ele.classList.add(classsName); 
+            ele.style.position="relative";
+            ele.style.background = 'black';
+            ele.style.height=`${size}`+"px";
+            ele.style.marginTop = `${mrgTop}`;
+            ele.style.marginLeft=`${mrgLeft}`;
+            ele.style.width=`${size}`+"px";
+            ele.style.cursor='grab';
+            size+=20;
+            return parent.appendChild(ele);
+        };
+    </script>
 </body>
 
 </html>
