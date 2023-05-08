@@ -1,0 +1,12 @@
+#wrapper{
+    margin-left: 5%;
+}
+h1{
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
