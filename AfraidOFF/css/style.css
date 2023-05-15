@@ -53,7 +53,6 @@ body {
 
 .container-fluid {
     background-color: #969595;
-
 }
 
 .navbar-brand {
@@ -123,8 +122,10 @@ body {
 
 form {
     margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 50%;
+    /* margin-left: 5%;
+    margin-right: 50%; */
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .profile-container {
@@ -210,9 +211,11 @@ form {
     align-items: center;
     justify-content: center;
 }
-.third a{
+
+.third a {
     text-align: center;
 }
+
 .navbar-toggler {
     display: none;
 }
@@ -227,6 +230,11 @@ form {
     margin-left: auto;
     margin-right: auto;
 } */
+@media (min-width: 768px ) {
+    .navbar-brand {
+        margin-top: 10px;
+    }
+}
 /* phone: */
 @media (max-width: 767px) {
     .navbar-toggler {
