@@ -1,6 +1,5 @@
 <?php
   include 'db.php';
-  include 'config.php';
 
   $query  = "SELECT * FROM tbl_78_books WHERE book_id=".$_GET["bookId"];
   $result = mysqli_query($connection, $query);
@@ -9,10 +8,8 @@
   die("can not connect to the DATA BASE");
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -44,7 +41,6 @@
             ?> 
 </div>
 </body>
-
 </html>
 <?php
   mysqli_close($connection);
