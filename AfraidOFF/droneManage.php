@@ -5,32 +5,14 @@ session_start();
 if(!isset($_SESSION["user_id"])){
     header('Location: ' . URL . 'index.php');
 }
-$us_id = $_SESSION["user_id"];
-if(isset($_POST['submit'])){
-    $cityNEW = $_POST['city'];
-    $addressNEW = $_POST['Address'];
-    $hourNEW=$_POST['hour'];
-    $minuteNEW=$_POST['minute'];
-    $amOrpmNEW=$_POST['amOrpm'];
-    $dateNEW=$_POST['dateInput'];
-    $timeNEW = $_POST['hour'] . ':' . $_POST['minute'] . ' ' . $_POST['amOrpm'];
+if($_SESSION["user_type"]!="admin"){
+    header('Location: ' . URL . 'index.php');
 }
-if (isset($_POST['progid'])&& $_POST['progid']!=0) {
-        $query = "UPDATE tbl_224_schedule_drone SET D_city='".$cityNEW."',D_address='".$addressNEW."',D_hour='".$hourNEW."',D_minute='".$minuteNEW."',D_am_pm='".$amOrpmNEW."',D_date='".$dateNEW."' 
-        WHERE D_id=".$_POST["progid"];  
-    if (!mysqli_query($connection, $query)) {
-        echo "Error inserting data: " . mysqli_error($connection);
-    }
-}
-else{
-    if (isset($_POST['submit'])) {
-        $query  = "INSERT INTO dbShnkr23stud2.tbl_224_schedule_drone (user_id,D_city,D_address,D_hour,D_minute,D_am_pm,D_date)
-                   VALUES ('".$_SESSION["user_id"]."','".$cityNEW."','".$addressNEW."','".$hourNEW."','".$minuteNEW."','".$amOrpmNEW."','".$dateNEW."') ";
-        if (!mysqli_query($connection, $query)) {
-            echo "Error inserting data: " . mysqli_error($connection);
-      }
-    }
-}
+    $query= "SELECT D_city, COUNT(*) AS city_count
+                FROM dbShnkr23stud2.tbl_224_schedule_drone
+                GROUP BY D_city ORDER BY city_count DESC"; 
+    $result =mysqli_query($connection, $query);
+    $city_array=["Kiryat gat","Ashkelon","Tel aviv","Ramat gan","Raanana","Rishon lezion","Kiryat shmona","Kiryat arba","Bat yam"];
 ?>
 
 <!DOCTYPE html>
@@ -39,18 +21,24 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/scripts.js"></script>
-    <title>AfraidOFF Schedule Confirmation</title>
+
+    <title>AfraidOFF Drone manage</title>
 </head>
+
 <body>
     <header>
         <div class="profile-container">
             <img src="<?php echo $_SESSION["profile_img"]; ?>" alt="Profile Image" class="profile-img-circle">
-          
+            
         </div>
         <div class="btn-group dropend">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,8 +65,8 @@ else{
             </ul>
         </div>
         <nav class="navbar bg-body-tertiary" id="navbarCollapse">
-            <div class="container-fluid delcontainer">
-                <a class="navbar-brand text-light" href="index.php"><b><i class="bi bi-house-door me-2 mr-2"></i>Home</b></a>
+            <div class="container-fluid delcontainer ">
+                <a class="navbar-brand text-light" href="index.php"><b class=""><i class="bi bi-house-door me-2"></i>Home</b></a>
             </div>
             <div class="container-fluid delcontainer">
                 <a class="navbar-brand" href="#"><i class="bi bi-cursor-fill me-2 mr-2"></i>Navigation</a>
@@ -90,7 +78,7 @@ else{
                 <a class="navbar-brand" href="#"><i class="bi bi-shield-shaded me-2 mr-2"></i>Help Others</a>
             </div>
             <div class="container-fluid">
-                <a class="navbar-brand" href="editprofile.php"><i class="bi bi-gear me-2 mr-2"></i>Edit Profile</a>
+                <a class="navbar-brand" href="editprofile.php"><i class="bi bi-gear me-2"></i>Edit Profile</a>
             </div>
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php?logout=1"><i class="bi bi-box-arrow-in-left me-2 mr-2"></i>Sing Out</a>
@@ -99,51 +87,41 @@ else{
                 <a class="navbar-brand" href="https://www.eran.org.il/"><i class="bi bi-globe2 me-2 mr-2"></i>“Eran” website</a>
             </div>
         </nav>
+
     </header>
     <section class="wrapper">
         <div id="logo">
-        <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
             <a  href="index.php">
                 <img  src="images/LOGO.png">
             </a>
             </div>
-            <p class="Breadcrumbs">Home/Schedule</p>
+            <p class="Breadcrumbs">Home/Drone Manage</p>
         </div>
-        <div class="container mt-5">
-            <h2>Escort successfully scheduled!</h2><br>
-            <div class="col-3">
-                <button id="showConfirmation" class="btn btn-primary">Show Details</button>
-            </div>
-        </div>
-
-        <div id="confirmationModal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Schedule Details:</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>City:
-                            <?php echo $cityNEW; ?>
-                        </p>
-                        <p>Address:
-                            <?php echo $addressNEW; ?>
-                        </p>
-                        <p>Time:
-                            <?php echo $timeNEW; ?>
-                        </p>
-                        <p>Date:
-                            <?php echo $dateNEW; ?>
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                    </div>
+        <div class="cardsManage mt-5">
+        <?php
+        while($row = mysqli_fetch_assoc($result)){
+            
+    echo    '<div class="card  fluid text-bg-';
+            if($row["city_count"]<5){
+                echo 'success';
+            }else if($row["city_count"]<10){
+                echo 'warning';
+            }else{
+                echo 'danger';
+            }
+    echo        ' text-center mb-3 me-3" style="max-width: 18rem;">
+                <div class="card-header text-center">Schedule Drones: </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center">'.$row["D_city"].'</h5>
+                    <p class="card-text text-center">'.$row["city_count"].'</p>';
+            echo '<button type="button" onclick="location.href='."'manage.php?city=".$row["D_city"]."'".'" class="btn btn-secondary mx-5 my-1 btn-lg mt-1 rounded-pill">Manage</button>';
+      echo'              
                 </div>
             </div>
+            ';
+        }
+        ?>
         </div>
     </section>
     <footer>
@@ -168,17 +146,8 @@ else{
                     </a>
                 </div>
             </div>
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#showConfirmation').click(function () {
-                $('#confirmationModal').modal('show');
-            });
-        });
-    </script>
+        </footer>
+    </div>
 </body>
 
 </html>

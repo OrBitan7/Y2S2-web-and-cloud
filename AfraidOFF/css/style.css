@@ -18,12 +18,40 @@ a {
     text-decoration: none;
     color: black;
 }
-
+/* .nav-link{
+    background-color: #3E3E3E;
+} */
+.active {
+    background-color: #3E3E3E;
+    color: #FFFFFF;
+    width: fit-content;
+    height: fit-content;
+}
+.cardsManage{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 150px;
+}
 .row {
     --bs-gutter-x: 0rem;
 }
-
-.logo-container {
+.loin{
+    background-color: #969595;
+}
+.btn-outline-primary {
+    --bs-btn-active-bg:black;
+    color: black;
+    border-color: black;
+}
+/* .logoimg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */
+/* .logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +62,7 @@ a {
     margin-right: auto;
     width: 400px;
     height: 90px;
-}
+} */
 
 header {
     background-color: #969595;
@@ -127,6 +155,10 @@ form {
     margin-left: 20%;
     margin-right: 20%;
 }
+.cancelbtn{
+    margin-left: 20%;
+
+}
 
 .profile-container {
     margin-top: 10px;
@@ -134,10 +166,18 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
+.dropend{
+    background-color: #969595;
+    display: none;
+}
+.dropdown-menu{
+    background-color: #969595;
 
+}
 .profile-img-circle {
-    width: 50%;
+    width: 70px;
     height: 50%;
     border-radius: 50%;
 }
@@ -146,7 +186,7 @@ form {
     background-color: #cbccce;
 }
 
-.green-circle {
+/* .green-circle {
     position: absolute;
     bottom: 10px;
     left: 25%;
@@ -154,7 +194,7 @@ form {
     height: 10%;
     background-color: green;
     border-radius: 50%;
-}
+} */
 
 #Escorts-container {
     margin-top: 20px;
@@ -201,7 +241,7 @@ form {
     border-radius: 5px;
 }
 
-.footer {
+footer {
     display: none;
 }
 
@@ -244,9 +284,10 @@ form {
         margin-left: 20px;
     }
 
-    .footer {
+    footer {
         display: block;
         position: fixed;
+        z-index: 5;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -261,7 +302,7 @@ form {
         z-index: 4;
     }
 
-    .green-circle {
+    /* .green-circle {
         position: absolute;
         bottom: 10px;
         left: 25%;
@@ -269,19 +310,19 @@ form {
         height: 20%;
         background-color: green;
         border-radius: 50%;
-    }
+    } */
 
     .logo-container {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url("../images/LOGO.png");
-        background-size: cover;
+        /* background-image: url("../images/LOGO.png"); */
+        /* background-size: cover; */
         background-repeat: no-repeat;
         margin-left: auto;
         margin-right: auto;
-        height: 90px;
-        width: 100%;
+        /* height: 90px; */
+        /* width: 100%; */
     }
 
     #logo {
@@ -312,7 +353,10 @@ form {
     .Escort-box {
         width: 100%;
     }
-
+.dropend{
+    
+    display: block;
+}
     .button-link {
         margin-top: 5px;
         margin-left: 225px;
