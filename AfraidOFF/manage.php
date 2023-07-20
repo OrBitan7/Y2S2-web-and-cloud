@@ -107,7 +107,7 @@ if(isset($_GET["city"])){
         <?php
         while($row = mysqli_fetch_assoc($result)){
             
-        echo '<div class="card" style="width: 18rem;">
+        echo '<div class="card mb-4" style="width: 18rem;">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><b>Name: </b>'.$row["fullname"].'</li>
                     <li class="list-group-item"><b>Addres: </b>'.$row["D_address"].'</li>
@@ -115,7 +115,7 @@ if(isset($_GET["city"])){
                     <li class="list-group-item"><b>Time: </b>'.$row["D_hour"].':'.$row["D_minute"].' '.$row["D_am_pm"].'</li>
                 </ul>
                 <div class="card-footer d-flex flex-column align-items-center">';
-        echo        '<button type="button" onclick="location.href='."'manage.php?city=".$_GET["city"]."&dellid=".$row["D_id"]."'".'" class="btn btn-secondary mx-5 btn-lg mt-1 rounded-pill"><i class="bi bi-trash3 me-2 mr-2"></i>Cancle</button>';
+        echo        '<button type="button" onclick="location.href='."'manage.php?city=".$_GET["city"]."&dellid=".$row["D_id"]."'".'" class="btn btn-secondary mx-5 btn-lg mt-1 rounded-pill"><i class="bi bi-trash3 me-2 mr-2"></i>Cancel</button>';
         echo    '</div>
             </div>';
 
